@@ -13,9 +13,11 @@ import java.util.List;
 public interface ProductDAO {
     @Insert
     void insert(Product product);
-
     @Query("SELECT * FROM product WHERE productName = :productName")
     Product findProductByName(String productName);
+
+    @Query("SELECT * FROM product")
+    List<Product> getAllProuduct();
 
     @Delete
     void delete(Product product);

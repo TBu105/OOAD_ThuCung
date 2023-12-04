@@ -25,12 +25,20 @@ public class UserController {
         this.context = context;
     }
 
-    public void createUser(User user) {
+    public Boolean createUser(User user) {
+        User checkUserExist = getUserByUserPhoneNumber(user.getUserphonenumber());
+
+        if (checkUserExist != null) {
+            return false;
+        }
+
         String hashedPassword = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
         user.setPassword(hashedPassword);
 
         AppDatabase.getInstance(context).userDAO().insert(user);
+
         Log.d("insert", "insert successfully");
+        return true;
     }
 
     public User getUserByUserPhoneNumber(String userPhoneNumber) {

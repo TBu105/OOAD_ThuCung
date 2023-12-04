@@ -13,6 +13,8 @@ import com.example.ooad_thucung.data.database.AppDatabase;
 import com.example.ooad_thucung.data.model.Product;
 import com.example.ooad_thucung.data.model.User;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     UserController userController = new UserController(this);
@@ -24,54 +26,60 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //        Hàm tạo người dùng
+//        đăng ký thành công trả về true, thất bại false
 //        createUser();
 
 //        Hàm đăng nhập
+//        đăng nhập thành công trả về true, thất bại false
 //        boolean checkUser = authUser();
-//        Log.d("wind", String.valueOf(checkUser));
 
+//        Log.d("TAG", String.valueOf(checkUser));
 
 //        Hàm lấy thông tin người dùng với số điện thoại của người đó
+//        Giá trị trả về một user nếu có, hoặc null nếu không có user
 //        User userWithPhone = getUserByUserPhoneNumber();
 
 //        Hàm tạo sản phẩm
+//        Tạo thành công trả true, thất bại false
 //        createProduct();
 
 //        Hàm lấy sản phẩm theo tên
+//        Trả về null nếu không có sp trong db, và product nếu có
 //        Product requestProduct = getProductByProductName();
 //
 //        Hàm xóa sản phẩm theo tên
-//        deleteProductByProductName();
+//        Nếu xóa thành công true, ngược lại false
+//        Boolean deleteProduct = deleteProductByProductName();
 
+//        Hàm lấy danh sách sản phẩm
+//        trả về danh sách sản phẩm, hoặc trả về danh sách rỗng
+//        List<Product> allProducts = getAllProduct();
+//        Log.d("check", allProducts.toString());
     }
 
-    private void createUser() {
+    private Boolean createUser() {
         String userPhoneNumber = "0942806400";
         String userPassword = "matkhau";
 
-        User user = new User(userPhoneNumber, userPassword);
+        User customer = new User(userPhoneNumber, userPassword);
 
-        userController.createUser(user);
+        return userController.createUser(customer);
     }
 
     private boolean authUser() {
         String userPhoneNumber = "0942806400";
         String userPassword = "matkhau";
 
-        boolean userExist = userController.checkLogin(userPhoneNumber, userPassword);
-
-        return userExist;
+        return userController.checkLogin(userPhoneNumber, userPassword);
     }
 
     private User getUserByUserPhoneNumber() {
         String userPhoneNumber = "0942806400";
 
-        User user = userController.getUserByUserPhoneNumber(userPhoneNumber);
-
-        return user;
+        return userController.getUserByUserPhoneNumber(userPhoneNumber);
     }
 
-    private void createProduct() {
+    private Boolean createProduct() {
         String productName = "de thuong";
         String sex = "female";
         int productPrice = 230;
@@ -83,19 +91,23 @@ public class MainActivity extends AppCompatActivity {
 
         Product product = new Product(productName, sex, productPrice, origin, age, weight, type, categorytype);
 
-        productController.createProduct(product);
+        return productController.createProduct(product);
     }
 
     private Product getProductByProductName() {
         String productName = "poodle";
-        Product product = productController.getProductByProductName(productName);
 
-        return product;
+        return productController.getProductByProductName(productName);
     }
 
-    private void deleteProductByProductName() {
+    private boolean deleteProductByProductName() {
         String productName = "de thuong";
 
-        productController.deleteProduct(productName);
+        return productController.deleteProduct(productName);
+    }
+
+    private List<Product> getAllProduct() {
+
+        return productController.getAllProduct();
     }
 }
