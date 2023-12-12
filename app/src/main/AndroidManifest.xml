@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -14,13 +13,14 @@
         android:theme="@style/Theme.OOAD_ThuCung"
         tools:targetApi="31">
         <activity
-
+            android:name=".AddProduct"
+            android:exported="false" />
+        <activity
             android:name=".ProductManagement"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false">
-
 
             <!-- Xóa intent-filter từ MainActivity -->
         </activity>
@@ -29,12 +29,10 @@
             android:exported="true">
             <intent-filter> <!-- Di chuyển intent-filter vào AdminActivity -->
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
 
-
 </manifest>
-
-
