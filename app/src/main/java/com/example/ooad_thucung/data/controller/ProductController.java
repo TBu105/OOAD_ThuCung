@@ -34,10 +34,6 @@ public class ProductController {
     public Product getProductByProductName(String productName) {
         Product product = AppDatabase.getInstance(context).productDAO().findProductByName(productName);
 
-        if(product == null) {
-            throw new NoSuchElementException("There is no product with this name");
-        }
-
         return product;
     }
 
