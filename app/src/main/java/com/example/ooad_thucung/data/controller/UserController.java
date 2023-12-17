@@ -64,4 +64,23 @@ public class UserController {
 
         return passwordMatches;
     }
+
+    public Boolean createAdmin(User admin) {
+        // Kiểm tra xem người dùng với số điện thoại này đã tồn tại chưa
+        User checkAdminExist = getUserByUserPhoneNumber(admin.getUserphonenumber());
+
+        if (checkAdminExist != null) {
+            return false;
+        }
+
+        // Băm mật khẩu trước khi lưu vào cơ sở dữ liệu
+        String hashedPassword = BCrypt.withDefaults().hashToString(12, admin.getPassword().toCharArray());
+        admin.setPassword(hashedPassword);
+
+        // Lưu người dùng vào cơ sở dữ liệu
+        AppDatabase.getInstance(context).userDAO().insert(admin);
+
+        Log.d("insert", "insert admin successfully");
+        return true;
+    }
 }
