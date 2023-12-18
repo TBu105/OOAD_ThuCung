@@ -12,26 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OOAD_ThuCung"
         tools:targetApi="31">
-
+        <activity
+            android:name=".NamAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminServiceActivity"
+            android:exported="false" />
         <activity
             android:name=".HomePage"
             android:exported="false" />
-
         <activity
             android:name=".AddProduct"
             android:exported="false" />
-
         <activity
             android:name=".ProductManagement"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".AdminActivity"
             android:exported="false">
+
             <!-- Xóa intent-filter từ AdminActivity -->
             <!--
             <intent-filter>
@@ -39,18 +41,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
-        </activity>
-
-        <!-- Đặt intent-filter trong LoginActivity -->
+        </activity> <!-- Đặt intent-filter trong LoginActivity -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -1,7 +1,9 @@
 package com.example.ooad_thucung;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +18,7 @@ import com.example.ooad_thucung.data.model.Product;
 import java.util.ArrayList;
 
 public class ProductManagement extends AppCompatActivity {
-    Button btnAdd;
+    Button btnAdd, btnDelete;
     ListView lvProduct;
     ProductMNAdapter adapter;
     ArrayList<ProductMN> productMNArrayList;
@@ -38,6 +40,7 @@ public class ProductManagement extends AppCompatActivity {
 
     public void addControl(){
         btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnDelete = (Button) findViewById(R.id.btnDelete);
     }
 
     public void addEvent(){
@@ -48,6 +51,7 @@ public class ProductManagement extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 

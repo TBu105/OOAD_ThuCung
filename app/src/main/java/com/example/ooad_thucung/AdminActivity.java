@@ -33,15 +33,16 @@ public class AdminActivity extends AppCompatActivity {
         adapter = new AdminAdapter(this,R.layout.layout_admin, adminArrayList );
         gvAdmin.setAdapter(adapter);
 
-        addEvent();
-    }
-    public void addEvent(){
         gvAdmin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), ProductManagement.class);
+                // Xử lý khi item được nhấn
+                Intent intent = new Intent(AdminActivity.this, AdminServiceActivity.class);
+                // Gửi dữ liệu nếu cần thiết
+                intent.putExtra("key",R.drawable.servicemn); // Thay "key" và value bằng dữ liệu bạn muốn gửi
                 startActivity(intent);
             }
         });
     }
+
 }
