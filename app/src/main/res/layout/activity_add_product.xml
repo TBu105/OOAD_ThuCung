@@ -43,13 +43,10 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinnerSpecies"/>
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtGender"
+            <Spinner
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:hint="Gender">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:id="@+id/spinnerGender"/>
         </LinearLayout>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,15 +141,30 @@
         </LinearLayout>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="SAVE"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/lay6"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="105dp"
-        android:backgroundTint="#98C683"/>
+        tools:layout_editor_absoluteX="-4dp"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#98C683"
+            android:text="SAVE"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CANCEL"
+            android:backgroundTint="#DA7070"/>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

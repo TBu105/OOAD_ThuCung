@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (loginSuccess) {
                     // Nếu đăng nhập thành công và không phải là 'user', chuyển đến MainActivity
                     if (!checkAdmin(username)) {
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, HomePage.class);
                         startActivity(intent);
                         finish(); // Đóng LoginActivity để không cho người dùng quay lại nếu đã đăng nhập
                     } else {
