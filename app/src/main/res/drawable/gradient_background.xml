@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Đoạn mã Gradient đã thêm -->
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <gradient
+                android:startColor="#FF8C52"
+                android:centerColor="#5a9dd6"
+                android:endColor="#42a6ef"
+                android:angle="90"
+            />
+        </shape>
+    </item>
+
+    <!-- Các item khác của selector nếu cần -->
+
+</selector>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-55dp"
+            android:src="@drawable/img_login"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="-15dp"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:text="Lets Get Started" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:text="LOGIN" />
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/img_name_login"
+            android:ems="10"
+            android:inputType="text"
+            android:drawablePadding="8dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:elevation="8dp"
+            android:hint="Name" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/img_password_login"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:drawablePadding="8dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:elevation="8dp"
+            android:hint="Password" />
+
+        <Button
+            android:id="@+id/btnChuyenLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:text="Login with email" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#42a6ef"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:text= "LOGIN" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

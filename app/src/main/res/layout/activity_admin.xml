@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdminActivity"
+    android:background="@drawable/custom_color_sv">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnBackAd"
+            android:layout_width="250px"
+            android:layout_height="150px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Back" />
+
+        <ImageView
+            android:id="@+id/imgAdmin"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:src="@drawable/imgavt"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="250dp"
+             />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAdmin"
+        android:text="WELCOME ADMIN"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"/>
+
+    <EditText
+        android:layout_width="300px"
+        android:layout_height="50px"
+        android:id="@+id/edtAdmin"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        />
+
+
+    <GridView
+        android:id="@+id/gvAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2" />
+
+</LinearLayout>
