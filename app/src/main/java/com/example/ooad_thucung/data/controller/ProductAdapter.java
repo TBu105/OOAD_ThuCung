@@ -53,19 +53,19 @@ public class ProductAdapter extends BaseAdapter {
         TextView tvSex = (TextView) convertView.findViewById(R.id.tvSex);
         TextView tvOrigin = (TextView) convertView.findViewById(R.id.tvOrigin);
         TextView tvWeight = (TextView) convertView.findViewById(R.id.tvWeight);
-        TextView tvType = (TextView) convertView.findViewById(R.id.tvType);
+//        TextView tvType = (TextView) convertView.findViewById(R.id.tvType);
         TextView tvAge = (TextView) convertView.findViewById(R.id.tvAge);
 
 
         Log.d("TEst", lsHangGio.get(position).getProductName());
 
         // Populate the data into the template view using the data object
-//        tvName.setText(lsHangGio.get(position).getProductName());
+        tvName.setText(lsHangGio.get(position).getProductName());
         tvPrice.setText("Price: " + String.valueOf(lsHangGio.get(position).getProductPrice()));
         tvSex.setText(lsHangGio.get(position).getSex());
         tvOrigin.setText("Origin: "+ lsHangGio.get(position).getOrigin());
         tvWeight.setText("Weight: " + lsHangGio.get(position).getWeight());
-        tvType.setText(lsHangGio.get(position).getType());
+//        tvType.setText(lsHangGio.get(position).getType());
         tvAge.setText("Age: "+ lsHangGio.get(position).getAge());
 
 

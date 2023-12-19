@@ -37,13 +37,13 @@ public class HomePage extends AppCompatActivity {
     }
 
     private Boolean createProduct() {
-        String productName = "Alaska";
-        String sex = "female";
+        String productName = "Test36";
+        String sex = "Malefef";
         int productPrice = 230;
-        String origin = "usa";
-        String age = "2 months";
-        String weight = "0.3 kg";
-        String type = "poodle";
+        String origin = "VN";
+        String age = "5 months";
+        String weight = "0.8 kg";
+        String type = "Cats";
         String categorytype = "dog";
 
         Product product = new Product(productName, sex, productPrice, origin, age, weight, type, categorytype);
