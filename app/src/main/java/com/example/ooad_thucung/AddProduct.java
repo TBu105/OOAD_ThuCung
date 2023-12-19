@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+<<<<<<< HEAD
+=======
+import android.widget.Toast;
+>>>>>>> 278736e (Add and delete product)
 
 import com.example.ooad_thucung.data.controller.ProductController;
 import com.example.ooad_thucung.data.model.Product;
@@ -63,9 +67,43 @@ public class AddProduct extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 createProduct();
                 Intent intent = new Intent(getApplicationContext(),ProductManagement.class);
                 startActivity(intent);
+=======
+                //createProduct();
+                String productName = edtName.getText().toString().trim();
+                String sex = spinnerGender.toString().trim();
+                int productPrice = edtPrice.getText().length();
+                String origin = edtOrigin.getText().toString().trim();
+                String age = edtAge.getText().toString().trim();
+                String weight = edtWeight.getText().toString().trim();
+                String type = "type";
+                String categorytype = spinnerSpecies.toString().trim();
+
+                if (!productName.isEmpty()) {
+                    // Tạo một sản phẩm mới từ thông tin nhập vào
+                    Product newProduct = new Product(productName,sex,productPrice,origin,age,weight,type,categorytype);
+
+                    // Thêm sản phẩm mới vào cơ sở dữ liệu sử dụng ProductController
+                    boolean isAdded = productController.createProduct(newProduct);
+
+                    if (isAdded) {
+                        Intent intent = new Intent(getApplicationContext(),ProductManagement.class);
+                        startActivity(intent);
+                    } else {
+                        // Xử lý trường hợp sản phẩm không thể thêm vào cơ sở dữ liệu
+                        // Ví dụ: hiển thị thông báo lỗi
+                        Toast.makeText(getApplicationContext(), "Sản phẩm đã tồn tại!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Xử lý trường hợp người dùng không nhập tên sản phẩm
+                    // Ví dụ: hiển thị thông báo lỗi
+                    Toast.makeText(getApplicationContext(), "Vui lòng nhập tên sản phẩm!", Toast.LENGTH_SHORT).show();
+                }
+
+>>>>>>> 278736e (Add and delete product)
             }
         });
 
@@ -77,6 +115,7 @@ public class AddProduct extends AppCompatActivity {
             }
         });
     }
+<<<<<<< HEAD
     private Boolean createProduct() {
         String productName = edtName.getText().toString();
         String sex = spinnerGender.toString();
@@ -91,6 +130,22 @@ public class AddProduct extends AppCompatActivity {
 
         return productController.createProduct(product);
     }
+=======
+//    private Boolean createProduct() {
+//        String productName = edtName.getText().toString();
+//        String sex = spinnerGender.toString();
+//        int productPrice = edtPrice.getText().length();
+//        String origin = edtOrigin.getText().toString();
+//        String age = edtAge.getText().toString();
+//        String weight = edtWeight.getText().toString();
+//        String type = "type";
+//        String categorytype = spinnerSpecies.toString();
+//
+//        Product product = new Product(productName, sex, productPrice, origin, age, weight, type, categorytype);
+//
+//        return productController.createProduct(product);
+//    }
+>>>>>>> 278736e (Add and delete product)
 
 
 }

@@ -11,19 +11,35 @@ import android.widget.Button;
 
 import android.widget.ImageView;
 import android.widget.ListView;
+<<<<<<< HEAD
 
+=======
+import android.widget.Toast;
+
+import com.example.ooad_thucung.data.controller.ProductAdapter;
+>>>>>>> 278736e (Add and delete product)
 import com.example.ooad_thucung.data.controller.ProductController;
 import com.example.ooad_thucung.data.dao.ProductDAO;
 import com.example.ooad_thucung.data.model.Product;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
+=======
+import java.util.List;
+>>>>>>> 278736e (Add and delete product)
 
 public class ProductManagement extends AppCompatActivity {
     Button btnAdd, btnDelete;
     ImageView imgBack;
     ListView lvProduct;
     ProductMNAdapter adapter;
+<<<<<<< HEAD
     ArrayList<ProductMN> productMNArrayList;
+=======
+    ProductController productController;
+    //ArrayList<Product> productArrayList;
+    ArrayList<Product> productList = new ArrayList<>();
+>>>>>>> 278736e (Add and delete product)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +48,26 @@ public class ProductManagement extends AppCompatActivity {
         addEvent();
 
         lvProduct =(ListView) findViewById(R.id.lvProduct);
+<<<<<<< HEAD
         productMNArrayList = new ArrayList<>();
 
         productMNArrayList.add(new ProductMN(Product.class.getName(),R.drawable.img_1));
 
         adapter = new ProductMNAdapter(this,R.layout.layout_product, productMNArrayList );
         lvProduct.setAdapter(adapter);
+=======
+        productController = new ProductController(this);
+        //productArrayList = new ArrayList<>();
+        //productArrayList.add(new Product(Product.class.getName(),));
+
+        adapter = new ProductMNAdapter(this,R.layout.layout_product, productList );
+        lvProduct.setAdapter(adapter);
+
+        productList.clear();
+        productList.addAll(productController.getAllProduct());
+        adapter.notifyDataSetChanged();
+
+>>>>>>> 278736e (Add and delete product)
     }
 
     public void addControl(){
@@ -63,6 +93,10 @@ public class ProductManagement extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 278736e (Add and delete product)
     }
 
 
