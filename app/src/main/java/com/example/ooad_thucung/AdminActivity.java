@@ -36,10 +36,26 @@ public class AdminActivity extends AppCompatActivity {
         gvAdmin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Xử lý khi item được nhấn
-                Intent intent = new Intent(AdminActivity.this, AdminServiceActivity.class);
+                Intent intent;
+
+                switch (position) {
+                    case 0:
+                        // Clicked on "PRODUCT MANAGEMENT"
+                        intent = new Intent(AdminActivity.this, ProductManagement.class);
+                        break;
+
+                    case 1:
+                        // Clicked on "SERVICE MANAGEMENT"
+                        intent = new Intent(AdminActivity.this, AdminServiceActivity.class);
+                        break;
+
+                    default:
+                        // Handle the default case or provide an error message
+                        return;
+                }
+
                 // Gửi dữ liệu nếu cần thiết
-                intent.putExtra("key",R.drawable.servicemn); // Thay "key" và value bằng dữ liệu bạn muốn gửi
+                intent.putExtra("key", R.drawable.servicemn); // Thay "key" và value bằng dữ liệu bạn muốn gửi
                 startActivity(intent);
             }
         });
