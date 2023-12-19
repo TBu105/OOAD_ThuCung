@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.ooad_thucung.data.controller.ProductController;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 
 public class ProductManagement extends AppCompatActivity {
     Button btnAdd, btnDelete;
+    ImageView imgBack;
     ListView lvProduct;
     ProductMNAdapter adapter;
     ArrayList<ProductMN> productMNArrayList;
@@ -41,6 +43,7 @@ public class ProductManagement extends AppCompatActivity {
     public void addControl(){
         btnAdd = (Button) findViewById(R.id.btnAdd);
         btnDelete = (Button) findViewById(R.id.btnDelete);
+        imgBack = (ImageView) findViewById(R.id.imgBack);
     }
 
     public void addEvent(){
@@ -48,6 +51,14 @@ public class ProductManagement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),AddProduct.class);
+                startActivity(intent);
+            }
+        });
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                 startActivity(intent);
             }
         });
